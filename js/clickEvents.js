@@ -1,8 +1,5 @@
-const restaurants = require('./data/restaurants.json');
-const drinks = require('./data/drinks.json');
-const themes = require('./data/drinks.json');
-const playlists = require('./data/drinks.json');
-
+var themes = require('./data/themes.json')
+/*
 $('#fud').click(function(e) {
   const url = random(restaurants);
   window.open(url);
@@ -22,9 +19,14 @@ $('#goButton').click(function(e) {
 
  // TOO, get me a slug
 
+ // if no holiday, RANDOMIZE IT BITCH!
+ Object.keys
 
-  // '/theme=var'
+
+  // send us to '/theme=Slug'
 });
+*/
+console.log(Object.keys[themes]);
 
 function random(input) {
   return input[Math.floor(Math.random() * input.length)];
