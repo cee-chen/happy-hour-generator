@@ -10,5 +10,10 @@ window.playlists = [
   "https://embed.spotify.com/?uri=spotify%3Auser%3A12166465404%3Aplaylist%3A6Coeel8nBjY7yjwyya7RBZ", // supa chill
   "https://embed.spotify.com/?uri=spotify%3Auser%3A12166465404%3Aplaylist%3A1W32WRNx603KLxJqYbROq4", // classics
   "https://embed.spotify.com/?uri=spotify%3Auser%3A12166465404%3Aplaylist%3A3vLYtWbY3zB4JWItAA649J", // dance
-  "https://embed.spotify.com/?uri=spotify%3Auser%3A12166465404%3Aplaylist%3A3luIWNQpTBS2k7pSM45RGv"  // Whitney 00s
+  "https://embed.spotify.com/?uri=spotify%3Auser%3A12166465404%3Aplaylist%3A3luIWNQpTBS2k7pSM45RGv", // Whitney 00s
+  "https://www.youtube.com/watch?v=qEI1_oGPQr0&list=RDqEI1_oGPQr0#t=5", // Tycho
+  "https://www.youtube.com/watch?v=wlsdMpnDBn8", // chill
+  "https://www.youtube.com/watch?v=zV4G64r91t4&list=RDzV4G64r91t4#t=6", // techno/dance
+  "https://www.youtube.com/playlist?list=PLA9A0B7EFC0AEBB3D", // acoustic
+  "https://www.youtube.com/playlist?list=PLC3B0BB09C7C1DC47" // internet memes
 ]
