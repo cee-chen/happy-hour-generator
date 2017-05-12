@@ -144,4 +144,16 @@ window.themes = {
     "photo": "https://visualhunt.com/photos/xl/4/spaghetti-pasta-noodles-eat-food-italy-lunch.jpg",
     "restaurant": "https://postmates.com/sea/in-the-bowl-vegetarian-noodle-bistro-seattle",
   },
+  "70s-sci-fi-movie-party": {
+    "name": "70s Sci-fi Movie Party",
+    "photo": "https://images-na.ssl-images-amazon.com/images/M/MV5BYzRiY2I3M2EtODJkMy00NTEyLTgxNmYtYzYwYjk1ZDE1MDE1XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SY1000_CR0,0,711,1000_AL_.jpg",
+  },
+  "brunch": {
+    "name": "Brunch",
+  },
+  "havana-nights": {
+    "name": "Havana Nights",
+    "restaurant": "http://places.singleplatform.com/la-bodega-17/menu?ref=google",
+    "playlist": "https://www.youtube.com/watch?v=fPWz_moXnpY&list=PL990AD115C86E51F8"
+  }
 }
