@@ -23,7 +23,7 @@ function loadTheme(theme) {
 
   // Set (optional) background image
   if (theme.photo) {
-    $('#js-theme').css('backgroundImage', 'url("http://imagesvc.timeincapp.com/?q=60&w=2000&url=' + encodeURIComponent(theme.photo) + '")');
+    $('#js-theme').css('backgroundImage', 'url("https://imagesvc.timeincapp.com/?q=60&w=2000&url=' + encodeURIComponent(theme.photo) + '")');
   } else {
     $('#js-theme').removeAttr('style');
   }
