@@ -1,8 +1,8 @@
 window.playlists = [
+  "https://open.spotify.com/user/126025861/playlist/3B0kL0vZ3GNPuFOkGQvz6f", // Time Inc, Seattle playlist
   "https://open.spotify.com/embed?uri=spotify%3Auser%3Athewestwingweekly%3Aplaylist%3A7qDSiqdjGvkymbBp9MJJF8", // dad rock
   "https://embed.spotify.com/?uri=spotify%3Auser%3Ab.laran%3Aplaylist%3A0JRT16hn8ps2wctKxzrk85", // shitty edm
   "https://embed.spotify.com/?uri=spotify%3Auser%3A1215476764%3Aplaylist%3A5L1hFkWAVa7bF7Ryxw40IS", // 1960s oldies
-  "https://embed.spotify.com/?uri=spotify%3Auser%3A126025861%3Aplaylist%3A3B0kL0vZ3GNPuFOkGQvz6f", // seattle time playlist
   "https://embed.spotify.com/?uri=spotify%3Auser%3Aspotify%3Aplaylist%3A37i9dQZF1DX58NJL8iVBGW", // swampy folky nonsense
   "https://embed.spotify.com/?uri=spotify%3Auser%3A1227700256%3Aplaylist%3A5Pgkr5O5sKsxgqPE45BLp2", // someone likes jazz
   "https://embed.spotify.com/?uri=spotify%3Auser%3Abluenoterecords%3Aplaylist%3A3WAkqbDCV91pCoPlglLj3l", // Robert Glasper's Blue Note Essentials
@@ -19,7 +19,6 @@ window.playlists = [
   "https://www.youtube.com/watch?v=eh7lp9umG2I", // HE-MAN HEYEAYEA SONG FOR 10 HOURS
   "https://www.youtube.com/watch?v=Cv6tuzHUuuk&list=PLYosk6VjN4ias709xn0j4EhcHeO4RQ2yK", // 1987 Top 40
   "https://open.spotify.com/user/electro_swing/playlist/549lx4U7hl7dSSRMoGIUga", // electro swing 2017
-  "https://open.spotify.com/user/126025861/playlist/3B0kL0vZ3GNPuFOkGQvz6f", // Time Inc, Seattle playlist
   "https://open.spotify.com/user/12175508356/playlist/7qgNU6BEQlk3otac7sI4jD", // electro swing via Hans
   "https://open.spotify.com/user/spotify/playlist/37i9dQZF1DXdDe8IDhRIo5", // gypsy swing
   "https://open.spotify.com/user/spotify/playlist/37i9dQZF1DX6dvuioZhoLo", // "vintage vibes"

@@ -76,6 +76,7 @@ window.themes = {
   "spaaaaaaace": {
     "name": "Spaaaaaaace",
     "photo": "https://wizbangblog.com/wp-content/uploads/2014/05/outer-space.jpg",
+    "restaurant": "https://www.trycaviar.com/seattle/meet-the-moon-3315",
     "drinks": "http://www.space.com/30635-moon-inspired-cocktails-supermoon-lunar-eclipse.html",
     "playlist": "https://www.youtube.com/watch?v=fWlHjpKmvh8" // FTL soundtrack
   },
@@ -150,6 +151,10 @@ window.themes = {
   },
   "brunch": {
     "name": "Brunch",
+    "photo": "https://images.unsplash.com/photo-1477747219299-60f95c811fef?w=2000&h=1500",
+    "restaurant": "https://postmates.com/sea/glos-seattle",
+    "drinks": "http://www.foodandwine.com/fwx/drink/5-brunch-cocktails-beat-hell-out-mimosa",
+    "playlist": "https://open.spotify.com/embed?uri=spotify:user:arturiux:playlist:70LGhQhl1k9AelvBnTfde7"
   },
   "havana-nights": {
     "name": "Havana Nights",
