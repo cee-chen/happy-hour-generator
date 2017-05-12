@@ -1,5 +1,21 @@
+var themeKeys = Object.keys(window.themes);
+
 function random(input) {
   return input[Math.floor(Math.random() * input.length)];
+}
+
+function loadTheme(theme) {
+  document.title = theme.name + ' - Happy Hour Theme Generator';
+  document.getElementById('js-name').innerText = theme.name;
+  document.getElementById('js-food').setAttribute('href', theme.restaurant || random(window.restaurants));
+  document.getElementById('js-drink').setAttribute('href', theme.drinks || random(window.drinks));
+  document.getElementById('js-music').setAttribute('href', theme.playlist || random(window.playlists));
+
+  if (theme.photo) {
+    document.getElementById('js-theme').style.backgroundImage = 'url("https://imagesvc.timeincapp.com/?q=60&w=2000&url=' + encodeURIComponent(theme.photo) + '")';
+  } else {
+    document.getElementById('js-theme').removeAttribute('style');
+  }
 }
 
 function loadSection() {
@@ -8,72 +24,44 @@ function loadSection() {
 
   if (themeParam && theme) {
     loadTheme(theme);
-    $('#js-start').hide();
-    $('#js-theme').show();
+    document.getElementById('js-start').classList.add('u-display-none');
+    document.getElementById('js-theme').classList.remove('u-display-none');
   } else {
-    $('#js-start').show();
-    $('#js-theme').hide();
+    document.getElementById('js-start').classList.remove('u-display-none');
+    document.getElementById('js-theme').classList.add('u-display-none');
   }
 }
 
-function loadTheme(theme) {
-  // Set title text
-  $('#theme').text(theme.name);
-  document.title = theme.name + ' - Happy Hour Theme Generator';
+function loadPage(url) {
+  // Start the transition animation
+  document.body.classList.add('is-transitioning');
 
-  // Set (optional) background image
-  if (theme.photo) {
-    $('#js-theme').css('backgroundImage', 'url("https://imagesvc.timeincapp.com/?q=60&w=2000&url=' + encodeURIComponent(theme.photo) + '")');
-  } else {
-    $('#js-theme').removeAttr('style');
-  }
+  // Navigate to the theme page
+  setTimeout(function() {
+    window.history.pushState(null, null, url);
+    loadSection();
+  }, 400)
 
-  // Set a specific restaurant if one exists, if not, fall back to a random one
-  if (theme.restaurant) {
-    $('#js-food').attr('href', theme.restaurant);
-  } else {
-    $('#js-food').attr('href', random(window.restaurants));
-  }
-
-  // Set a specific drink recipe if one exists, if not, fall back to a random one
-  if (theme.drinks) {
-    $('#js-drink').attr('href', theme.drinks);
-  } else {
-    $('#js-drink').attr('href', random(window.drinks));
-  }
-
-  // Set a specific playlist if one exists, if not, fall back to a random one
-  if (theme.playlist) {
-    $('#js-music').attr('href', theme.playlist);
-  } else {
-    $('#js-music').attr('href', random(window.playlists));
-  }
+  // Clear the transition animation
+  setTimeout(function() {
+    document.body.classList.remove('is-transitioning');
+  }, 1500)
 }
 
-window.onpopstate = function (event) {
-  loadSection();
-}
-
-$(document).ready(function() {
+document.addEventListener("DOMContentLoaded", function () {
   loadSection();
 
-  var themeKeys = Object.keys(window.themes);
-
-  $('.js-generate').click(function(event) {
+  document.getElementById('js-roll').addEventListener('click', function (event) {
     event.preventDefault();
-
-    // Start page transition
-    $('body').addClass('is-transitioning');
-
-    // Flip the theme
-    setTimeout(function() {
-      window.history.pushState(null, null, '?theme=' + random(themeKeys));
-      loadSection();
-    }, 400)
-
-    // End page transition
-    setTimeout(function() {
-      $('body').removeClass('is-transitioning');
-    }, 1500)
+    loadPage('?theme=' + random(themeKeys));
   })
+
+  document.getElementById('js-reroll').addEventListener('click', function (event) {
+    event.preventDefault();
+    loadPage('?theme=' + random(themeKeys));
+  })
+});
+
+window.addEventListener('popstate', function () {
+  loadSection();
 });

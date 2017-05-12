@@ -25,17 +25,17 @@
           Happy Hour
           <span>Theme Generator</span>
         </h1>
-        <button class="submit js-generate">
+        <button id="js-roll" class="submit">
           Go! <i class="fa fa-hand-o-right"></i>
         </button>
       </div>
     </section>
 
-    <section id="js-theme" class="results">
+    <section id="js-theme" class="results u-display-none">
       <div class="results__wrapper">
         <h1 class="results__heading">
           <span>Your Theme:</span>
-          <div id="theme">...</div>
+          <div id="js-name">...</div>
         </h1>
 
         <a id="js-food" class="cta cta-food" href="#" target="_blank" rel="nofollow noopener">
@@ -58,7 +58,7 @@
         </a>
       </div>
 
-      <a class="reroll js-generate" href="#">
+      <a id="js-reroll" class="reroll" href="#">
         <i class="fa fa-refresh"></i>
         No way, Jose. Give me another idea!
       </a>
@@ -71,7 +71,6 @@
     </div>
 
     <!-- Javascript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="js/script.min.js"></script>
   </body>
 </html>
