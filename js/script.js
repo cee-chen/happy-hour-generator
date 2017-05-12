@@ -3,8 +3,11 @@ function random(input) {
 }
 
 function loadSection() {
-  if (window.location.search.indexOf('theme=') !== -1) {
-    loadTheme();
+  var themeParam = window.location.search.split('theme=')[1];
+  var theme = window.themes[themeParam];
+
+  if (themeParam && theme) {
+    loadTheme(theme);
     $('#js-start').hide();
     $('#js-theme').show();
   } else {
@@ -13,49 +16,48 @@ function loadSection() {
   }
 }
 
-function loadTheme() {
-  var themeParam = window.location.search.split('=')[1];
+function loadTheme(theme) {
+  // Set title text
+  $('#theme').text(theme.name);
+  document.title = theme.name + ' - Happy Hour Theme Generator';
 
-  if (themeParam) {
-    var theme = window.themes[themeParam];
+  // Set (optional) background image
+  if (theme.photo) {
+    $('#js-theme').css('backgroundImage', 'url("http://imagesvc.timeincapp.com/?q=60&w=2000&url=' + encodeURIComponent(theme.photo) + '")');
+  } else {
+    $('#js-theme').removeAttr('style');
+  }
 
-    // Set title text
-    $('#theme').text(theme.name);
+  // Set a specific restaurant if one exists, if not, fall back to a random one
+  if (theme.restaurant) {
+    $('#js-food').attr('href', theme.restaurant);
+  } else {
+    $('#js-food').attr('href', random(window.restaurants));
+  }
 
-    // Set (optional) background image
-    if (theme.photo) {
-      $('#js-theme').css('backgroundImage', 'url("http://imagesvc.timeincapp.com/?q=60&w=2000&url=' + encodeURIComponent(theme.photo) + '")');
-    } else {
-      $('#js-theme').removeAttr('style');
-    }
+  // Set a specific drink recipe if one exists, if not, fall back to a random one
+  if (theme.drinks) {
+    $('#js-drink').attr('href', theme.drinks);
+  } else {
+    $('#js-drink').attr('href', random(window.drinks));
+  }
 
-    // Set a specific restaurant if one exists, if not, fall back to a random one
-    if (theme.restaurant) {
-      $('#js-food').attr('href', theme.restaurant);
-    } else {
-      $('#js-food').attr('href', random(window.restaurants));
-    }
-
-    // Set a specific drink recipe if one exists, if not, fall back to a random one
-    if (theme.drinks) {
-      $('#js-drink').attr('href', theme.drinks);
-    } else {
-      $('#js-drink').attr('href', random(window.drinks));
-    }
-
-    // Set a specific playlist if one exists, if not, fall back to a random one
-    if (theme.playlist) {
-      $('#js-music').attr('href', theme.playlist);
-    } else {
-      $('#js-music').attr('href', random(window.playlists));
-    }
+  // Set a specific playlist if one exists, if not, fall back to a random one
+  if (theme.playlist) {
+    $('#js-music').attr('href', theme.playlist);
+  } else {
+    $('#js-music').attr('href', random(window.playlists));
   }
 }
 
-$(document).ready(function() {
-  var themeKeys = Object.keys(window.themes);
-
+window.onpopstate = function (event) {
   loadSection();
+}
+
+$(document).ready(function() {
+  loadSection();
+
+  var themeKeys = Object.keys(window.themes);
 
   $('.js-generate').click(function(event) {
     event.preventDefault();
