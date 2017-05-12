@@ -70,9 +70,7 @@ body.results {
   }
 
   &:hover,
-  &:focus,
-  &:hover .fa,
-  &:focus .fa {
+  &:focus {
     color: $color-darkest;
   }
 
