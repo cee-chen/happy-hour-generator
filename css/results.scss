@@ -58,10 +58,13 @@
   cursor: pointer;
   transition: color .3s ease-out;
 
-  .fa {
+  svg {
+    vertical-align: middle;
+    width: 1em;
+    height: 1em;
+    margin-top: -.1em;
     margin-right: .7em;
-    color: $color-accent;
-    transition: color .3s ease-out;
+    fill: $color-accent;
   }
 
   span {
@@ -104,19 +107,23 @@
 
 .reroll {
   z-index: 1;
-  flex-basis: 100%;
   align-self: flex-end;
   padding: 1.5em;
   text-align: center;
   color: $color-light;
 
-  .fa {
+  svg {
+    vertical-align: middle;
+    width: 1em;
+    height: 1em;
+    margin-top: -.1em;
     margin-right: .5em;
-    transition: transform 5s linear;
+    fill: currentColor;
+    transition: transform 4s linear;
   }
 
-  &:hover .fa,
-  &:focus .fa {
+  &:hover svg,
+  &:focus svg {
     transform: rotate(1080deg);
   }
 }
