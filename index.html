@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Happy Hour Generator</title>
+    <title>Happy Hour Theme Generator</title>
 
     <!-- Favicons -->
     <link rel="icon" type="image/png" href="images/favicon-96.png" sizes="96x96">
@@ -17,17 +17,58 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> <!-- TODO: Swap with SVGs -->
     <link href="css/style.min.css" rel="stylesheet">
   </head>
-  <body class="home">
+  <body>
 
-    <main class="home__wrapper">
-      <h1 class="home__heading">
-        Happy Hour
-        <span>Theme Generator</span>
-      </h1>
-      <button id="generate" class="submit">
-        Go! <i class="fa fa-hand-o-right"></i>
-      </button>
-    </main>
+    <section id="js-start" class="home">
+      <div class="home__wrapper">
+        <h1 class="home__heading">
+          Happy Hour
+          <span>Theme Generator</span>
+        </h1>
+        <button class="submit js-generate">
+          Go! <i class="fa fa-hand-o-right"></i>
+        </button>
+      </div>
+    </section>
+
+    <section id="js-theme" class="results">
+      <div class="results__wrapper">
+        <h1 class="results__heading">
+          <span>Your Theme:</span>
+          <div id="theme">...</div>
+        </h1>
+
+        <a id="js-food" class="cta cta-food" href="#" target="_blank" rel="nofollow noopener">
+          <span>
+            <i class="fa fa-cutlery"></i>
+            Get me some eats
+          </span>
+        </a>
+        <a id="js-drink" class="cta cta-drink" href="#" target="_blank" rel="nofollow noopener">
+          <span>
+            <i class="fa fa-glass"></i>
+            I wanna drink
+          </span>
+        </a>
+        <a id="js-music" class="cta cta-music" href="#" target="_blank" rel="nofollow noopener">
+          <span>
+            <i class="fa fa-music"></i>
+            Play me a song, Joe
+          </span>
+        </a>
+      </div>
+
+      <a class="reroll js-generate" href="#">
+        <i class="fa fa-refresh"></i>
+        No way, Jose. Give me another idea!
+      </a>
+    </section>
+
+    <div class="revealer">
+      <div class="revealer__layer"></div>
+      <div class="revealer__layer"></div>
+      <div class="revealer__layer"></div>
+    </div>
 
     <!-- Javascript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>

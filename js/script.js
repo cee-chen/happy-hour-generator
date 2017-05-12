@@ -2,23 +2,18 @@ function random(input) {
   return input[Math.floor(Math.random() * input.length)];
 }
 
-$(document).ready(function() {
+function loadSection() {
+  if (window.location.search.indexOf('theme=') !== -1) {
+    loadTheme();
+    $('#js-start').hide();
+    $('#js-theme').show();
+  } else {
+    $('#js-start').show();
+    $('#js-theme').hide();
+  }
+}
 
-  /**
-   * Homepage
-   */
-  var themeKeys = Object.keys(window.themes);
-
-  $('#generate').click(function(event) {
-    event.preventDefault();
-
-    var theme = random(themeKeys);
-    window.location.replace('generated.html?theme=' + theme);
-  })
-
-  /**
-   * Individual theme page
-   */
+function loadTheme() {
   var themeParam = window.location.search.split('=')[1];
 
   if (themeParam) {
@@ -29,7 +24,9 @@ $(document).ready(function() {
 
     // Set (optional) background image
     if (theme.photo) {
-      $('body').css('background-image', theme.photo);
+      $('#js-theme').css('backgroundImage', 'url("' + theme.photo + '")');
+    } else {
+      $('#js-theme').removeAttr('style');
     }
 
     // Set a specific restaurant if one exists, if not, fall back to a random one
@@ -53,5 +50,28 @@ $(document).ready(function() {
       $('#js-music').attr('href', random(window.playlists));
     }
   }
+}
 
+$(document).ready(function() {
+  var themeKeys = Object.keys(window.themes);
+
+  loadSection();
+
+  $('.js-generate').click(function(event) {
+    event.preventDefault();
+
+    // Start page transition
+    $('body').addClass('is-transitioning');
+
+    // Flip the theme
+    setTimeout(function() {
+      window.history.pushState(null, null, '?theme=' + random(themeKeys));
+      loadSection();
+    }, 400)
+
+    // End page transition
+    setTimeout(function() {
+      $('body').removeClass('is-transitioning');
+    }, 1500)
+  })
 });

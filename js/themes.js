@@ -3,7 +3,7 @@ window.themes = {
     "name": "Social Media Soiree",
     "drinks": "http://www.foodandwine.com/recipes/east-jaffa-mule",
     "playlist": "",
-    "photo": "https://d2eyrv63e6x6lp.cloudfront.net/wp-content/uploads/2016/04/08141842/iStock_000086308497_Large.jpg",
+    "photo": "http://eatsmiles.com/wp-content/uploads/2016/11/slide.jpg",
     "restaurant": "https://www.trycaviar.com/seattle/skillet--capitol-hill-3724",
     "date": ""
   },
